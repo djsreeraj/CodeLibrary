@@ -1,0 +1,4 @@
+SELECT c.category_id, c.category_name, cs.sub_cat_id, cs.subcat_name, css.subcatsub_id, css.subcatsub_name
+FROM category c, category_subcat cs, category_subcat_sub css
+WHERE c.category_id = cs.category_id
+AND css.subcatsub_id = cs.sub_cat_id
