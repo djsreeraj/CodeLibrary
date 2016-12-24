@@ -1,0 +1,3 @@
+SELECT category.category_id, category.category_name, category_subcat.subcat_name ,  category_subcat_sub.subcatsub_name
+FROM category, category_subcat , category_subcat_sub
+WHERE category.category_id = category_subcat.category_id
