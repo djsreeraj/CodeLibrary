@@ -1,3 +1,9 @@
-SELECT category.category_id, category.category_name, category_subcat.subcat_name ,  category_subcat_sub.subcatsub_name
-FROM category, category_subcat , category_subcat_sub
-WHERE category.category_id = category_subcat.category_id
+SELECT * 
+FROM (
+
+SELECT a.locality_name, a.pincode, b.city_name, c.district_name
+FROM locality a
+LEFT OUTER JOIN city b ON a.city_id = b.city_id
+LEFT OUTER JOIN district c ON a.district_id = c.district_id
+) AS T
+WHERE locality_name =  "Kanhangad"
